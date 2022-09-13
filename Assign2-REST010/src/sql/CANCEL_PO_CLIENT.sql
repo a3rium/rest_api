@@ -1,0 +1,6 @@
+CREATE DEFINER=`kothawala`@`129.173.0.0/255.255.0.0` PROCEDURE `CANCEL_PO_CLIENT`(IN poNo010 INT)
+BEGIN
+    START TRANSACTION;
+    UPDATE pos010 SET status010 = 'Pending Cancellation' WHERE (po_no010 = poNo010);
+    COMMIT;
+END
